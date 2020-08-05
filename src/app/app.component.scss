@@ -1,0 +1,70 @@
+// App Styles
+// ----------------------------------------------------------------------------
+// Put style rules here that you want to apply to the entire application. These 
+// styles are for the entire app and not just one component. Additionally, this 
+// file can hold Sass mixins, functions, and placeholder classes to be imported 
+// and used throughout the application.
+
+// App Styles
+// ----------------------------------------------------------------------------
+// Put style rules here that you want to apply to the entire application. These 
+// styles are for the entire app and not just one component. Additionally, this 
+// file can hold Sass mixins, functions, and placeholder classes to be imported 
+// and used throughout the application.
+
+.manu-header{
+  background: #ff997a;
+}
+
+.cont-bg{
+  background: #ff997a!important;
+  color: #fff;
+}
+.user-details{
+  height: 100%;
+  border-radius: 0% 20% 158% 2%/14% 0% 87% 1%;
+  padding-top: 32px;
+  padding-left: 54px;
+  width: 87%;
+  background: #00b7ee;
+  text-align: left !important;
+  color: #fff;
+  box-shadow: 0 2.8px 2.2px rgba(0, 183, 238, 0.17), 19px -4px 7px 7px rgba(81, 204, 243, 0.31), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.user-details img{
+  width: 30%;
+}
+
+.manu-link{
+  list-style: none;
+  padding: 0;
+}
+
+.manu-link li{
+  font-size: 16px;
+  padding-bottom: 20px;
+}
+.manu-link li a{
+  color: #fff;
+}
+
+.user-details p{
+  padding-bottom: 30px;
+}
+
+.toolbar-container{
+  height: 220px!important;
+}
+.header-ios ion-toolbar:last-child {
+  --border-width: 0!important;
+}
+.icon-inner, svg {
+  display: none!important;
+  
+}
+.ion-content, svg{
+  display: none!important;
+}
+.overscroll{ background:#ff997a !important;}
+.icon-inner svg{ display: none !important;}

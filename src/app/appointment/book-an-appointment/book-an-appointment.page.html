@@ -1,0 +1,107 @@
+<ion-header>
+    <!-- <ion-toolbar> -->
+    <div class="head">
+       <ion-buttons slot="start">
+          <ion-menu-button>
+             <img src="/assets/images/manu.png" alt="" class="manu-icon">
+          </ion-menu-button>
+       </ion-buttons>
+       <ion-title class="text-center">
+          Book Appointments
+       </ion-title>
+       <div class="notification">
+          <a routerLink="/notifications">
+             <!-- <img src="/assets/images/notification-icon.png" alt=""> -->
+             <i class="fa fa-shopping-cart"></i>
+             <!-- <span>2</span> -->
+          </a>
+       </div>
+    </div>
+    <!-- </ion-toolbar> -->
+ </ion-header>
+ <ion-content>
+    <div class="col-md-12">
+       <div class="time-schedule">
+          <h5>Select time schedule for booking appointments</h5>
+          <form [formGroup]="appointmentSlotList" (ngSubmit)="bookAppointmentAction()">
+          <div class="row">
+             <div class="col-6">
+                <div class="select">
+                   <select name="slct" id="slct" id="city_id" formControlName="city_id">
+                      <option selected disabled>Select City</option>
+                      <option value="1">Pure CSS</option>
+                      <option value="2">No JS</option>
+                      <option value="3">Nice!</option>
+                   </select>
+                </div>
+             </div>
+             <div class="col-6">
+                <input type="date" class="form-control">
+             </div>
+          </div>
+          <div class="row">
+             <div class="col-md-12">
+                <div class="select-onoffline">
+                   <p>
+                      <button type="button" class="cstm-btn">Go</button>
+                   </p>
+                </div>
+                <div class="select-date">
+                   <ul>
+                      <!-- <li *ngFor="let slot_date of slot_list" class="active"><span>{{slot_date?.slot_date}}</span></li> -->
+                      <li  *ngFor="let slot_data of slot_list">
+                      <span>{{slot_data.slot_date}}</span>
+                         <div class="time-selectt">
+                            <ul>
+                               <li *ngFor="let slot_data1 of slot_data.onsite_time_slot)">
+                                  <div class="inputGroup">
+                                     <input id="option1" name="option1" type="checkbox"/>
+                                  <label for="option1"><span>{{slot_data1.onsite_time_slot}}</span></label>
+                                  </div>
+                               </li>
+                               <li>
+                                  <div class="inputGroup">
+                                     <span class="tltip">price Rs.1200/</span>
+                                     <input id="option11" name="option1" type="checkbox"/>
+                                     <label for="option11">Option One</label>
+                                  </div>
+                               </li>
+                            </ul>
+                         </div>
+                      </li>
+                   </ul>
+                </div>
+                <div class="col-12">
+                   <div class="select-onoffline">
+                      <p>
+                         <button type="button" class="cstm-btn">Go</button>
+                      </p>
+                   </div>
+                </div>
+                <!-- <div class="warning">
+                   <ul>
+                      <li><span class="bk"></span> Booked </li>
+                      <li><span class="slct"></span> Select</li>
+                      <li><span class="vacnt"></span> Vacant </li>
+                   </ul>
+                </div> -->
+             </div>
+          </div>
+          </form>
+          <!-- Modal -->
+          <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+             <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                
+                 <div class="modal-body">
+                   <h2>Your booking has been confirmed on <span>12th </span>jun <span>5 </span>pm</h2>
+                 </div>
+                 <div class="modal-footer">
+                   <button type="button" class="btn cstm-btn" data-dismiss="modal">Close</button>
+                 </div>
+               </div>
+             </div>
+             </div> -->
+       </div>
+    </div>
+ </ion-content>

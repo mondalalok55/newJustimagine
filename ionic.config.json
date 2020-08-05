@@ -1,0 +1,7 @@
+{
+  "name": "JustImagine",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

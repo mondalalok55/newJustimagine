@@ -1,0 +1,98 @@
+<ion-header>
+  <!-- <ion-toolbar> -->
+    <div class="head">
+    <ion-buttons slot="start">
+      <ion-menu-button>
+        <img src="/assets/images/manu.png" alt="" class="manu-icon">
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title class="text-center">
+        Edit Profile
+    </ion-title>
+    <div class="notification">
+      <a routerLink="/notifications">
+        <!-- <img src="/assets/images/notification-icon.png" alt=""> -->
+        <i class="fa fa-bell-o"></i>
+      <span>2</span>
+      </a>
+    </div>
+  </div>
+  <!-- </ion-toolbar> -->
+</ion-header>
+  <ion-content>
+      <ion-grid>
+        <ion-row justify-content-center>
+          <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+               <form [formGroup]="updateAccount" (ngSubmit)="updateAccountAction()">
+              <div padding class="profile-box">
+                <div class="edit-img">
+                  <img src="../../assets/images/user.png" alt="">
+                <h4>{{user_details?.name}}</h4>
+                </div>
+                <ion-item class="form-group frm">
+                  <span><i class="fa fa-user"></i></span>
+                  <ion-input type="text" class="info-frm" id="name" formControlName="name" placeholder="Your Name" value="{{user_details?.name}}" (keyup)="validateName($event)" (change)="removeSpace($event)"></ion-input>
+                  <span *ngIf="updateAccount.controls?.name?.invalid && updateAccount.controls?.name?.touched"></span>
+                  <span *ngIf="updateAccount.controls?.name?.errors?.pattern">Enter Valid Name</span>
+                </ion-item>
+                <ion-item class="form-group frm">
+                    <span><i class="fa fa-envelope"></i></span>
+                    <ion-input type="text" class="info-frm" id="email" formControlName="email" placeholder="Email ID" value="{{user_details?.email}}" readonly></ion-input>
+                  </ion-item>
+                  <ion-item class="form-group frm">
+                      <span><i class="fa fa-phone "></i></span>
+                      <ion-input type="text" class="info-frm" id="phone" formControlName="phone" placeholder="Phone Number" value="{{user_details?.phone}}" readonly></ion-input>
+                    </ion-item>
+                <ion-item class="form-group frm">
+                  <span><i class="fa fa-home"></i></span>
+                  <ion-input type="text" class="info-frm" id="address1" formControlName="address1" placeholder="Address Line1" value="{{user_details?.address1}}"></ion-input>
+                </ion-item>
+                <ion-item class="form-group frm">
+                    <span><i class="fa fa-home"></i></span>
+                    <ion-input type="text" class="info-frm" id="address2" formControlName="address2" placeholder="Address Line2" value="{{user_details?.address2}}"></ion-input>
+                </ion-item>
+                <ion-item class="form-group frm">
+                    <span><i class="fa fa-venus"></i></span>
+                    <ion-label  class="info-frm"></ion-label>
+                    <ion-select (ionChange)="getState($event)" [(ngModel)]="count" id="country_id" formControlName="country_id"  name="country_id">
+                      <ion-select-option *ngFor="let country_data of country" value={{country_data?.id}}>
+                        {{country_data?.name}}
+                      </ion-select-option>
+                    </ion-select>
+                  </ion-item>
+                  <ion-item class="form-group frm">
+                      <span><i class="fa fa-venus"></i></span>
+                      <ion-select (ionChange)="getCity($event)" id="state_id" formControlName="state_id" name="state_id">
+                          <ion-select-option *ngFor="let state_data of state" value={{state_data?.id}} >
+                            {{state_data?.name}}
+                          </ion-select-option>
+                        </ion-select>                    
+                   </ion-item>
+                  <ion-item class="form-group frm">
+                          <span><i class="fa fa-map-marker"></i></span>
+                          <ion-select  id="city_id" formControlName="city_id" name="city_id">
+                              <ion-select-option *ngFor="let city_data of city" value={{city_data?.id}}>
+                                {{city_data?.name}}
+                              </ion-select-option>
+                            </ion-select> 
+                  </ion-item>    
+                  <ion-item class="form-group frm">
+                      <span><i class="fa fa-venus"></i></span>
+                      <ion-input type="text" class="info-frm" id="pin" formControlName="pin" placeholder="Pin" value="{{user_details?.pin}}"></ion-input>
+                      <span *ngIf="updateAccount.controls?.pin?.invalid && updateAccount.controls?.pin?.touched"></span>
+                      <span *ngIf="updateAccount.controls?.pin?.errors?.pattern">Enter Valid Pin</span>
+                  </ion-item>
+              </div>
+              <div padding>
+                <button type="submit" size="large" expand="block" class="btn sing-btn">UPDATE</button>
+                <!-- <p class="forgot">
+                  <span><a href="#">Forgot Password ?</a></span> 
+                  <span class="regi"><a href="/register">Register Now</a></span> 
+                </p> -->
+                <ion-input type="hidden" class="info-frm" id="user_id" formControlName="user_id" value="{{user_details?.id}}"></ion-input>
+              </div>
+            </form>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-content>

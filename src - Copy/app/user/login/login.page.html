@@ -1,0 +1,68 @@
+<!-- <ion-content>
+  <ion-grid>
+      <ion-row justify-content-center>
+          <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+              <form [formGroup]="login" (ngSubmit)="loginAction()">
+                  <div text-center>
+                      <p class="logo-img"><img src="../../assets/images/logo.png" alt="" /></p>
+                      <h4>Sign In</h4>
+                      <hr>
+                  </div>
+                  <div padding>
+                      <ion-item class="form-group frm">
+                          <span><i class="fa fa-user"></i></span>
+                          <input type="tel" class="info-frm" id="username" name="username" formControlName="username" placeholder="User Name" maxlength=50 />
+                      </ion-item>
+
+                      <ion-item class="form-group frm">
+                          <span><i class="fa fa-lock"></i></span>
+                          <input type="password" class="info-frm" id="password" name="password" formControlName="password" placeholder="Password" />                      </ion-item>
+                  </div>
+                  <div class="reg-btn">
+                      <button type="submit" size="large" expand="block" class="btn sing-btn">SIGN IN</button>
+              </form>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-content> -->
+
+
+
+<!--<ion-header>
+  <ion-toolbar>
+    <ion-title>Sign In</ion-title>
+  </ion-toolbar>
+</ion-header>-->
+<ion-content>
+    <ion-grid>
+        <ion-row justify-content-center>
+            <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+                <form [formGroup]="login" (ngSubmit)="loginAction()">
+                    <div text-center>
+                        <p class="logo-img"><img src="../../assets/images/logo.png" alt="" /></p>
+                        <h4>Sign In</h4>
+                        <hr>
+                    </div>
+                    <div padding>
+                        <ion-item class="form-group frm">
+                            <span><i class="fa fa-user"></i></span>
+                            <ion-input type="tel" class="info-frm" id="username" formControlName="username" placeholder="username" maxlength=13 ></ion-input>
+                        </ion-item>
+
+                        <ion-item class="form-group frm">
+                            <span><i class="fa fa-lock"></i></span>
+                            <ion-input type="password" class="info-frm" id="password" formControlName="password" placeholder="Password"></ion-input>
+                        </ion-item>
+                    </div>
+                    <div class="reg-btn">
+                        <button type="submit" size="large" expand="block" class="btn sing-btn">SIGN IN</button>
+                        <p class="forgot">
+                            <span><a (click)="gotoForgetPasswordPage()">Forgot Password ?</a></span>
+                            <span class="regi"><a (click)="gotoRegistrationPage()">Register Now</a></span>
+                        </p>
+                    </div>
+                </form>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

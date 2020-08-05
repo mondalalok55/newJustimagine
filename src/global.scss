@@ -1,0 +1,143 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+.ion-button button.button-native{
+    background: #ff8a65 !important;
+}
+button{ background-color: transparent !important;}
+
+.success{
+    background: #ff8a65!important;
+    color: #fff;
+}
+.toolbar-container{ background: #000 !important;}
+.toolbar-background{ background: #000 !important;}
+.overscroll{ background: coral !important;}
+.list-ios{ background: coral !important}
+.s-ion-icon{ display: none !important;}
+.icon-inner{ display: none !important;}
+.ion-focusable a{ box-shadow: none !important; border: none !important;}
+.item-detail-icon{ display: none;}
+
+// -------------start header-------------
+.head{
+    width: 100%;
+    background: #00b7ee;
+    background-position: center;
+    background-size: cover;
+    display: -webkit-box;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 6px;
+    color: #fff;
+  }
+  .text-center{
+    text-align: center;
+  }
+  .notification{
+    width: 48px;
+    text-align: right;
+    padding-top: 10px;
+    padding-right: 18px;
+  }
+  .notification img{
+    width: 18px;
+    position: absolute;
+    right: 18px;
+    top: 25px;
+  }
+  .notification i{
+    position: absolute;
+    right: 19px;
+    top: 19px;
+    color: #fff;
+    font-size: 22px;
+  }
+  .notification span{
+    background: red;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 8px;
+    width: 16px;
+    font-weight: bold;
+    height: 15px;
+    position: absolute;
+    right: 12px;
+    top: 16px;
+    text-align: center;
+    border: none;
+  }
+  
+  // -----end header----
+
+
+  // ---------footer section-----------
+
+.footer-sec{
+  display: flex;
+  width: 100%;
+  margin: 0;
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid #ddd;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  background: #fff;
+  z-index: 9999;
+}
+.footer{
+  width: 25%;
+  text-align: center;
+  color: #bebebe;
+}
+
+.footer svg{
+  width: 20px;
+}
+
+.footer svg path{
+  fill: #bebebe;
+}
+
+.footer a{
+  color: #bebebe;
+  font-size: 11px;
+}
+
+.active a{
+  color: #111111;
+}
+
+.active svg path{
+  fill: #00b7ee;
+}
+
+// ---------End footer section-----------
+

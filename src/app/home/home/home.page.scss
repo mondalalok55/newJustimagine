@@ -1,0 +1,47 @@
+// -------manu css-------------
+
+.manu-header{
+  background: #ff8a65;
+  color: #fff;
+}
+
+.manu-bar{
+  color: #fff;
+}
+.info-btn{
+  font-size: 20px;
+  color: #fff;
+  z-index: 99;
+  display: block;
+  float: right;
+  padding-right: 3%;
+  position: relative;
+  cursor: pointer;
+}
+
+// ---------end manu css-----------
+.product-name{
+  font-size: 18px;
+  width: 100%;
+  display: inline-block;
+  color: #404040;
+  padding-top: 10px;
+}
+.product{
+  background: #fff;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  width: 100%;
+  padding: 15px 0px 10px;
+  display: inline-block;
+  margin: 15px 0px;
+  border-radius: 10px;
+}
+.product img{
+  width: 55px;
+  height: 50px;
+}
+
+.product-list{
+  padding: 0px 15px !important;
+}

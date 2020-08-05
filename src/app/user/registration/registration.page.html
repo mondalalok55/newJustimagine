@@ -1,0 +1,64 @@
+<ion-content>
+  <ion-grid>
+      <ion-row justify-content-center>
+          <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+              <div text-center>
+                  <p class="logo-img"><img src="../../assets/images/logo.png" alt="" /></p>
+                  <h4>Register</h4>
+                  <hr>
+              </div>
+              <form [formGroup]="registration" (ngSubmit)="registrationAction()">
+                  <div padding>
+                      <ion-item class="form-group frm">
+                          <span><i class="fa fa-user"></i></span>
+                          <ion-input type="text" class="info-frm" id="first_name" placeholder="First Name" formControlName="first_name"  (keyup)="validateName($event)"></ion-input>
+                          <span *ngIf="registration.controls?.first_name?.invalid && registration.controls?.first_name?.touched"></span>
+                          <span *ngIf="registration.controls?.first_name?.errors?.pattern">Only Alphabets</span>
+                      </ion-item>
+                      <ion-item class="form-group frm">
+                        <span><i class="fa fa-user"></i></span>
+                        <ion-input type="text" class="info-frm" id="last_name" placeholder="Last Name" formControlName="last_name" (keyup)="validateName($event)" ></ion-input>
+                        <span *ngIf="registration.controls?.last_name?.invalid && registration.controls?.last_name?.touched"></span>
+                        <span *ngIf="registration.controls?.last_name?.errors?.pattern">Only Alphabets</span>
+                    </ion-item>
+                      <ion-item class="form-group frm">
+                          <span><i class="fa fa-phone-square"></i></span>
+                          <ion-input type="tel" class="info-frm" id="phone" placeholder="Phone No" formControlName="phone" maxlength=10 minlength=10 (keyup)="validatePhone($event)"></ion-input>
+                          <span *ngIf="registration.controls?.phone?.invalid && registration.controls?.phone?.touched"></span>
+                          <span *ngIf="registration.controls?.phone?.errors?.pattern">Only Digits</span>
+                      </ion-item>
+                      <ion-item class="form-group frm">
+                          <span><i class="fa fa-envelope"></i></span>
+                          <ion-input type="email" class="info-frm" id="email" placeholder="Email ID" formControlName="email" ></ion-input>
+                          <span *ngIf="registration.controls?.email?.invalid && registration.controls?.email?.touched"></span>
+                          <span *ngIf="registration.controls?.email?.errors?.pattern">Invalid Email</span>
+                      </ion-item>
+                      <ion-item class="form-group frm">
+                          <span><i class="fa fa-lock"></i></span>
+                          <ion-input type="password" class="info-frm" id="password" formControlName="password" placeholder="Password"></ion-input>
+                          <span *ngIf="registration.controls?.password?.invalid && registration.controls?.password?.touched"></span>
+                            <span class="hass-error-message" *ngIf="registration.controls?.password?.errors?.minlength">
+                            atleast 6 characters
+                         </span>
+                      </ion-item>
+                      <ion-item class="form-group frm">
+                          <span><i class="fa fa-lock"></i></span>
+                          <ion-input type="password" class="info-frm" id="confirm_password" formControlName="confirm_password" placeholder="Confirm Password"></ion-input>
+                          <span *ngIf="registration.controls?.confirm_password?.invalid && registration.controls?.confirm_password?.touched"></span>
+                          <span class="hass-error-message" *ngIf="registration.controls?.confirm_password?.errors?.minlength">
+                          atleast 6 characters
+                          </span>
+                      </ion-item>
+                  </div>
+                  <div padding>
+                      <button type="submit" size="large" expand="block" class="btn sing-btn">Register</button>
+                      <p class="forgot text-center">
+                          <span>Already have An Account | <a (click)="gotoLoginPage()">Login now</a></span>
+                          <!-- <span class="regi"><a routerLink="/register">Register Now</a></span>  -->
+                      </p>
+                  </div>
+              </form>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-content>
