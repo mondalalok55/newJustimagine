@@ -12,11 +12,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.page.html',
-  styleUrls: ['./cart.page.scss'],
+  selector: 'app-order-summary',
+  templateUrl: './order-summary.page.html',
+  styleUrls: ['./order-summary.page.scss'],
 })
-export class CartPage implements OnInit {
+export class OrderSummaryPage implements OnInit {
   slot_list: any;
   slot_id_data_arr:any =[];
   appointment_data:any ={};
@@ -172,4 +172,5 @@ deleteCartItem(cart_id){
     );
   }
 }
+
 }

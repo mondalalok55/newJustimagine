@@ -44,11 +44,13 @@
                               <button  type="button" class="cstm-btn alert-danger" (click)="deleteCartItem(slot_data.id)">delete</button>
 
                            </li>
+                           <li ng-if="slot_data.length == 0">No Data Found</li>
                         </ul>
                      </div>
+                     
                      <div class="col-12">
                         <div class="select-onoffline">
-                              <button  type="button" class="cstm-btn" (click)="gotoOrderSummaryPage()">Order Summary</button>
+                              <button  ng-if="slot_data.length != 0" type="button" class="cstm-btn" (click)="gotoOrderSummaryPage()">Order Summary</button>
                               <button  type="button" class="cstm-btn" (click)="gotoHomePage()">Home</button>
                         </div>
                      </div>

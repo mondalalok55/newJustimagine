@@ -44,7 +44,8 @@ export class ApiService {
     `${environment.apiUrl}/appointment/getCityList/`,  //10
     `${environment.apiUrl}/appointment/getOnlineAppointmentSlotList/`, //11
     `${environment.apiUrl}/appointment/getAppointmentSlotList/` ,//12
-    `${environment.apiUrl}/appointment/deleteCartItem/` , //13
+    `${environment.apiUrl}/appointment/getCartAppointmentSlotList/` , //13
+    `${environment.apiUrl}/appointment/deleteCartItem/` , //14
   ];
 constructor(private http: HttpClient) {}
 // post(serviceName: string, data: any) {

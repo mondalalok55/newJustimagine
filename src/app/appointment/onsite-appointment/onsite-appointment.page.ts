@@ -107,7 +107,7 @@ getAppointmentSlotList() {
       })
     }
     if(check_token){
-    let url = this.apiService.allApiEndPoints[8]+user_id+`/`+city_id;
+    let url = this.apiService.allApiEndPoints[12]+user_id;
     let i;
     this.apiService.sendHttpCallWithToken(url,"","get").subscribe(
       (res: any) => {

@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { OnsiteAppointmentPage } from './onsite-appointment/onsite-appointment.page';
 import { OnlineAppointmentPage } from './online-appointment/online-appointment.page';
+import { OrderSummaryPage } from './order-summary/order-summary.page';
 
 
 const routes: Routes = [
@@ -31,6 +32,11 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'orderSummary',
+    redirectTo: 'orderSummary',
+    pathMatch: 'full'
+  },
+  {
     path: 'bookAnAppointment',
     component:BookAnAppointmentPage
   },
@@ -46,6 +52,10 @@ const routes: Routes = [
     path: 'cart',
     component:CartPage
   },
+  {
+    path: 'orderSummary',
+    component:OrderSummaryPage
+  },
   
   
   
@@ -55,7 +65,8 @@ const routes: Routes = [
     BookAnAppointmentPage,
     OnlineAppointmentPage,
     OnsiteAppointmentPage,
-    CartPage
+    CartPage,
+    OrderSummaryPage
   ],
   imports: [
     IonicModule,

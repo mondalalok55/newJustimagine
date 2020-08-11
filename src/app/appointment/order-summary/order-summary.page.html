@@ -1,0 +1,92 @@
+<ion-header>
+  <!-- <ion-toolbar> -->
+  <div class="head">
+     <ion-buttons slot="start">
+        <ion-menu-button>
+           <img src="/assets/images/manu.png" alt="" class="manu-icon">
+        </ion-menu-button>
+     </ion-buttons>
+     <ion-title class="text-center">
+       Order Summary
+     </ion-title>
+     <div class="notification">
+        <a routerLink="/notifications">
+           <!-- <img src="/assets/images/notification-icon.png" alt=""> -->
+           <!-- <i class="fa fa-shopping-cart"></i> -->
+           <!-- <span>2</span> -->
+        </a>
+     </div>
+  </div>
+  <!-- </ion-toolbar> -->
+</ion-header>
+<ion-content>
+  <div class="col-md-12">
+     <div class="time-schedule">
+        <h5>Your Order Summary</h5>
+        <form >
+             <div class="row">
+                <div class="col-md-12">
+                   <div class="select-date">
+                      <!-- <ul>
+                         <li  *ngFor="let slot_data of slot_list ;let i = index">
+                         <span>{{slot_data.slot_date | date : "fullDate"}}</span>
+                            <div class="time-selectt">
+                               <ul>
+                                  <li  *ngFor="let slot_data_time of slot_data.time_slot;let j = index">
+                                     <div class="inputGroup">
+                                        <span class="tltip">price Rs.1200/</span>
+                                     <input id="{{'option' + i + j}}"  type="checkbox" ng-model='checkStatus' value={{slot_data_time.slot_id}} />
+                                     <label for="{{'option' + i + j}}"><span>{{slot_data_time.start_time+slot_data_time.start_meridiem+"-"+slot_data_time.end_time+slot_data_time.end_meridiem}}</span></label>
+                                     </div>
+                                  </li>
+                               </ul>
+                            </div>
+                            <button  type="button" class="cstm-btn alert-danger" (click)="deleteCartItem(slot_data.id)">delete</button>
+
+                         </li>
+                         <li ng-if="slot_data.length == 0">No Data Found</li>
+                      </ul> -->
+                      <div class="table-responsive-sm">
+                      <table calss="table">
+                        <tr>
+                          <th>Date</th>
+                          <th>Slot List</th>
+                          <th>Sub Total</th>
+                        </tr>
+                        <tr  *ngFor="let slot_data of slot_list ;let i = index">
+                          <td>{{slot_data.slot_date | date : "fullDate"}}</td>
+                          <td><span style="display:inline-block;width:100%;" *ngFor="let slot_data_time of slot_data.time_slot;let j = index">{{slot_data_time.start_time+slot_data_time.start_meridiem+"-"+slot_data_time.end_time+slot_data_time.end_meridiem}}</span><br></td>
+                          <td>Germany</td>
+                        </tr>
+                        <hr>
+                        <tr>
+                          <td></td>
+                          <td>Subtotal</td>
+                          <td>100</td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td>Gst(18%)</td>
+                          <td>18</td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td>Total</td>
+                          <td>118</td>
+                        </tr>
+                      </table>
+                      </div>
+                   </div>
+                   
+                   <div class="col-12">
+                      <div class="select-onoffline">
+                            <button  ng-if="slot_data.length != 0" type="button" class="cstm-btn" (click)="gotoOrderSummaryPage()">Order Summary</button>
+                            <button  type="button" class="cstm-btn" (click)="gotoHomePage()">Home</button>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             </form>
+     </div>
+  </div>
+</ion-content>
