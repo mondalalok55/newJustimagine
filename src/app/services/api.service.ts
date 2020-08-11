@@ -39,7 +39,12 @@ export class ApiService {
     // `${environment.apiUrl}/user/getCity/`+this.user_id+`/`+this.get_id ,                      // 6
     `${environment.apiUrl}/user/getCity/`,                      // 6
     `${environment.apiUrl}/user/updateAccount/`,  //7
-    `${environment.apiUrl}/appointment/getAppointmentSlotList/`,  //8
+    `${environment.apiUrl}/appointment/getOnsiteAppointmentSlotList/`,  //8
+    `${environment.apiUrl}/appointment/saveAppointmentToCart/`,  //9
+    `${environment.apiUrl}/appointment/getCityList/`,  //10
+    `${environment.apiUrl}/appointment/getOnlineAppointmentSlotList/`, //11
+    `${environment.apiUrl}/appointment/getAppointmentSlotList/` ,//12
+    `${environment.apiUrl}/appointment/deleteCartItem/` , //13
   ];
 constructor(private http: HttpClient) {}
 // post(serviceName: string, data: any) {

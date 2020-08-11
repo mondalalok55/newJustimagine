@@ -1,0 +1,101 @@
+<ion-header>
+    <!-- <ion-toolbar> -->
+    <div class="head">
+       <ion-buttons slot="start">
+          <ion-menu-button>
+             <img src="/assets/images/manu.png" alt="" class="manu-icon">
+          </ion-menu-button>
+       </ion-buttons>
+       <ion-title class="text-center">
+          Book Appointments
+       </ion-title>
+       <div class="notification">
+          <a (click)="gotoCartPage()">
+             <!-- <img src="/assets/images/notification-icon.png" alt=""> -->
+             <!-- <i (click)="gotoCartPage()" class="fa fa-shopping-cart"></i> -->
+             <i  class="fa fa-shopping-cart"></i>
+
+             <!-- <span>2</span> -->
+          </a>
+       </div>
+    </div>
+    <!-- </ion-toolbar> -->
+ </ion-header>
+ <ion-content>
+    <div class="col-md-12">
+       <div class="time-schedule">
+          <h5>Select time schedule for booking appointments</h5>
+          <form [formGroup]="fetchAppointmentSlotList" (ngSubmit)="getAppointmentSlotListAction()">
+          <div class="row">
+             <div class="col-6">
+                <!-- <div class="select">
+                   <label>Select City</label>
+                   <select id="city_id" formControlName="city_id" name="city_id" >
+                      <option value="">Select City</option>
+                      <option *ngFor="let city_data of city_list" value={{city_data?.id}}>{{city_data?.name}}</option>
+                   </select>
+                </div> -->
+                <ion-item class="form-group frm">
+                     <span><i class="fa fa-map-marker"></i></span>
+                     <ion-label  class="info-frm"></ion-label>
+                     <ion-select  id="city_id" formControlName="city_id" name="city_id">
+                         <ion-select-option *ngFor="let city_data of city_list" value={{city_data?.id}} >
+                           {{city_data?.name}}
+                         </ion-select-option>
+                       </ion-select> 
+                </ion-item>   
+             </div>
+             <div class="col-6">
+                <!-- <input type="date" class="form-control"> -->
+                <ion-item>
+                  <ion-label></ion-label>
+                  <ion-datetime displayFormat="DD/MM/YYYY" placeholder="Select Date" id="appointment_date" formControlName="appointment_date" ></ion-datetime>
+                </ion-item>
+             </div>
+             <ion-input type="hidden" class="info-frm" id="userid" formControlName="userid" value="{{userid}}"></ion-input>
+
+          </div>
+          <div class="row">
+             <div class="col-md-12">
+                <div class="select-onoffline">
+                   <p>
+                      <button type="submit" class="cstm-btn">Search</button>
+                   </p>
+                </div>
+                <div class="select-date">
+                </div>
+             </div>
+          </div>
+          </form>
+          <form [formGroup]="appointmentSlotList" (ngSubmit)="bookAppointmentAction()">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="select-date">
+                        <ul>
+                           <li  *ngFor="let slot_data of slot_list ;let i = index">
+                           <span>{{slot_data.slot_date | date : "fullDate"}}</span>
+                              <div class="time-selectt">
+                                 <ul>
+                                    <li  *ngFor="let slot_data_time of slot_data.onsite_time_slot;let j = index">
+                                       <div class="inputGroup">
+                                          <span class="tltip">price Rs.1200/</span>
+                                       <input id="{{'option' + i + j}}" formControlName="slot_id_arr" type="checkbox" ng-model='checkStatus' value={{slot_data_time.slot_id}} (change)="getTimeSlot($event,slot_data.id)"/>
+                                       <label for="{{'option' + i + j}}"><span>{{slot_data_time.start_time+slot_data_time.start_meridiem+"-"+slot_data_time.end_time+slot_data_time.end_meridiem}}</span></label>
+                                       </div>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="col-12">
+                        <div class="select-onoffline">
+                              <button *ngIf="slot_list!=undefined" type="submit" class="cstm-btn">Submit</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               </form>
+       </div>
+    </div>
+ </ion-content>
